@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="Burgundy">#89001B</color>
+    <color name="AlabamaCrimson">#AD0D2C</color>
+    <color name="RustyRed">#D62245</color>
+    <color name="ParadisePink">#E44967</color>
+    <color name="LightCrimson">#F1738C</color>
+
     <color name="VividRaspberry">#AD0040</color>
     <color name="UARed">#E20054</color>
     <color name="Polly">#F00059</color>
@@ -29,6 +35,18 @@
     <color name="LapisLazuli">#2660A4</color>
     <color name="SteelBlue">#4276B4</color>
     <color name="Livid">#6795CC</color>
+
+    <color name="TropicalRainForest">#00675C</color>
+    <color name="TealGreen">#068376</color>
+    <color name="JungleGreen">#1B998B</color>
+    <color name="Zomp">#37A69A</color>
+    <color name="MediumAquamarine">#5FC1B7</color>
+
+    <color name="DarkGreen">#00201A</color>
+    <color name="BritishRacingGreen">#00382D</color>
+    <color name="CSGreen">#065143</color>
+    <color name="DarkSpringGreen">#186858</color>
+    <color name="MyrtleGreen">#2D7D6D</color>
 
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>

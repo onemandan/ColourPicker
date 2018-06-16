@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="themeColours">
+        <item>@color/Burgundy</item>
+        <item>@color/AlabamaCrimson</item>
+        <item>@color/RustyRed</item>
+        <item>@color/ParadisePink</item>
+        <item>@color/LightCrimson</item>
         <item>@color/VividRaspberry</item>
         <item>@color/UARed</item>
         <item>@color/Polly</item>
@@ -26,5 +31,15 @@
         <item>@color/LapisLazuli</item>
         <item>@color/SteelBlue</item>
         <item>@color/Livid</item>
+        <item>@color/TropicalRainForest</item>
+        <item>@color/TealGreen</item>
+        <item>@color/JungleGreen</item>
+        <item>@color/Zomp</item>
+        <item>@color/MediumAquamarine</item>
+        <item>@color/DarkGreen</item>
+        <item>@color/BritishRacingGreen</item>
+        <item>@color/CSGreen</item>
+        <item>@color/DarkSpringGreen</item>
+        <item>@color/MyrtleGreen</item>
     </array>
 </resources>
