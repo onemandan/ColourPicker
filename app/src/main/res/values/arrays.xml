@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="themeColours">
+        <item>@color/VividRaspberry</item>
+        <item>@color/UARed</item>
+        <item>@color/Polly</item>
+        <item>@color/CerisePink</item>
+        <item>@color/VioletRed</item>
+        <item>@color/DeepViolet</item>
+        <item>@color/PixiePowder</item>
+        <item>@color/RebeccaPurple</item>
+        <item>@color/Grape</item>
+        <item>@color/MiddleBluePurple</item>
+        <item>@color/GambogeOrange</item>
+        <item>@color/DarkGoldenRod</item>
+        <item>@color/Saffron</item>
+        <item>@color/MinionYellow</item>
+        <item>@color/CrayolaYellow</item>
+        <item>@color/Brown</item>
+        <item>@color/BurntOrange</item>
+        <item>@color/UOTOrange</item>
+        <item>@color/DeepSaffron</item>
+        <item>@color/Rajah</item>
+        <item>@color/DarkMidnightBlue</item>
+        <item>@color/YaleBlue</item>
+        <item>@color/LapisLazuli</item>
+        <item>@color/SteelBlue</item>
+        <item>@color/Livid</item>
+    </array>
+</resources>

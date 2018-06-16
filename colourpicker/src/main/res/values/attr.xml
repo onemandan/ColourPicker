@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ColourPicker">
+        <attr name="cp_colours" format="reference" />
+        <attr name="cp_colourSize" format="dimension|enum">
+            <enum name="auto_fit" value="1" />
+        </attr>
+        <attr name="cp_maxSelected" format="integer" />
+    </declare-styleable>
+
+</resources>

@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="VividRaspberry">#AD0040</color>
+    <color name="UARed">#E20054</color>
+    <color name="Polly">#F00059</color>
+    <color name="CerisePink">#F22E77</color>
+    <color name="VioletRed">#F55A93</color>
+
+    <color name="DeepViolet">#320760</color>
+    <color name="PixiePowder">#47137E</color>
+    <color name="RebeccaPurple">#5E239D</color>
+    <color name="Grape">#713DA9</color>
+    <color name="MiddleBluePurple">#8F60C2</color>
+
+    <color name="GambogeOrange">#8F7301</color>
+    <color name="DarkGoldenRod">#BA9912</color>
+    <color name="Saffron">#E6C229</color>
+    <color name="MinionYellow">#F9D950</color>
+    <color name="CrayolaYellow">#FFE576</color>
+
+    <color name="Brown">#8E4200</color>
+    <color name="BurntOrange">#BB5500</color>
+    <color name="UOTOrange">#F17105</color>
+    <color name="DeepSaffron">#FF9136</color>
+    <color name="Rajah">#FFA75E</color>
+
+    <color name="DarkMidnightBlue">#09366B</color>
+    <color name="YaleBlue">#11498B</color>
+    <color name="LapisLazuli">#2660A4</color>
+    <color name="SteelBlue">#4276B4</color>
+    <color name="Livid">#6795CC</color>
+
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorWhiteTint">#CCFFFFFF</color>
 </resources>
