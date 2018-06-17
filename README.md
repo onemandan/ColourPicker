@@ -3,6 +3,47 @@ A simple Android colour picker selection view, based around the GridView.  Colou
 
 <img src="https://github.com/onemandan/ColourPicker/blob/master/ColourPicker.png" height="430px"/>
 
+## Installation
+To get MaterialTextView into your project, add the repository to your build.gradle.
+
+#### Gradle
+1. Add the JitPack repository to your projects build.gradle:
+```gradle
+allprojects {
+  repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
+
+2. Add the dependency to your modules build.gradle :
+```gradle
+dependencies {
+  implementation 'com.github.onemandan:ColourPicker:0.0.1'
+}
+```
+
+#### Maven
+1. Add the JitPack repository to your build file:
+```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+```
+
+2. Add the dependency:
+```xml
+<dependency>
+  <groupId>com.github.onemandan</groupId>
+  <artifactId>ColourPicker</artifactId>
+  <version>0.0.1</version>
+</dependency>
+```
+
 ## Usage
 
 ``` xml
