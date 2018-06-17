@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 
+import java.util.List;
+
+import uk.co.onemandan.colourpicker.ColourClickedListener;
 import uk.co.onemandan.colourpicker.ColourPicker;
 
 public class Sample extends AppCompatActivity {
@@ -23,9 +26,9 @@ public class Sample extends AppCompatActivity {
         _colourPicker   = findViewById(R.id.cp_colours);
         _selectedColour = findViewById(R.id.cv_selected);
 
-        _colourPicker.setColourSelectedListener(new ColourPicker.ColourSelectedListener() {
+        _colourPicker.setColourSelectedListener(new ColourClickedListener() {
             @Override
-            public void OnLastColourSelected(int colour) {
+            public void OnColourClicked(int colour) {
                 animChangeColour(colour);
             }
         });
