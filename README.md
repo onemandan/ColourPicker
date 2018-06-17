@@ -1,4 +1,10 @@
 # ColourPicker
+<p>
+  <a href="https://jitpack.io/#onemandan/ColourPicker" rel="nofollow"><img alt="API" src="https://img.shields.io/badge/API-15%2B-brightgreen.svg" style="max-width:100%;"></a>
+  <a href="https://jitpack.io/#onemandan/ColourPicker" rel="nofollow"><img alt="Release" src="https://jitpack.io/v/onemandan/ColourPicker.svg" style="max-width:100%;"></a>
+  <a href="https://raw.githubusercontent.com/onemandan/MaterialTextView/master/LICENSE" rel="nofollow"><img alt="GitHub license" src="https://img.shields.io/badge/license-MIT-blue.svg" style="max-width:100%;"></a>
+</p>
+
 A simple Android colour picker selection view, based around the GridView.  Colours are generated in the GridView via a colour array reference and autofit based on ```app:cp_coloursPerRow```.
 
 <img src="https://github.com/onemandan/ColourPicker/blob/master/ColourPicker.png" height="430px"/>
