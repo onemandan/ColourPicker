@@ -49,6 +49,12 @@ dependencies {
   <version>0.0.1</version>
 </dependency>
 ```
+## Updates
+
+#### 0.0.2
+- Added MaterialColourView.  
+- Added cp_canDeselectLast.  Determines whether or not atleast one colour has to be selected.
+- Added cp_selectorColour.  Determines colour of the check icon, 80% white by default.
 
 ## Usage
 
