@@ -1,11 +1,9 @@
 package uk.co.onemandan.colourpicker;
 
 import android.animation.ArgbEvaluator;
-import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
@@ -13,13 +11,15 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MaterialColourView extends LinearLayout{
+public class MaterialColourView extends LinearLayout implements View.OnClickListener{
 
     private TextView _labelView;
     private CardView _colourView;
 
     private CharSequence _labelText;
     private int _colourViewColour;
+
+    private OnClickListener _listener;
 
     public MaterialColourView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -28,8 +28,12 @@ public class MaterialColourView extends LinearLayout{
 
     private void init(Context context, AttributeSet attrs){
         View root = inflate(context, R.layout.view_material_colour, this);
+        View rootView = root.findViewById(R.id.cv_root);
+
         _labelView  = root.findViewById(R.id.tv_label);
         _colourView = root.findViewById(R.id.cv_colour);
+
+        rootView.setOnClickListener(this);
 
         handleAttributes(context, attrs);
     }
@@ -74,6 +78,11 @@ public class MaterialColourView extends LinearLayout{
         }
     }
 
+    @Override
+    public void setOnClickListener(@Nullable OnClickListener l) {
+        _listener = l;
+    }
+
     @SuppressWarnings("unused")
     public CharSequence getLabelText(){
         return _labelText;
@@ -84,4 +93,8 @@ public class MaterialColourView extends LinearLayout{
         return _colourViewColour;
     }
 
+    @Override
+    public void onClick(View v) {
+        if(_listener != null) _listener.onClick(v);
+    }
 }

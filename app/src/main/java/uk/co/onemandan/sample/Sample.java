@@ -7,6 +7,8 @@ import android.support.v4.graphics.ColorUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -31,6 +33,13 @@ public class Sample extends AppCompatActivity {
             @Override
             public void OnColourClicked(int colour) {
                 _selectedColour.setColour(colour, true);
+            }
+        });
+
+        _selectedColour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Sample.this, "Colour", Toast.LENGTH_SHORT).show();
             }
         });
     }
