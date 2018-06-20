@@ -12,11 +12,12 @@ import java.util.List;
 
 import uk.co.onemandan.colourpicker.ColourClickedListener;
 import uk.co.onemandan.colourpicker.ColourPicker;
+import uk.co.onemandan.colourpicker.MaterialColourView;
 
 public class Sample extends AppCompatActivity {
 
     ColourPicker _colourPicker;
-    CardView     _selectedColour;
+    MaterialColourView _selectedColour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,28 +25,13 @@ public class Sample extends AppCompatActivity {
         setContentView(R.layout.activity_sample);
 
         _colourPicker   = findViewById(R.id.cp_colours);
-        _selectedColour = findViewById(R.id.cv_selected);
+        _selectedColour = findViewById(R.id.mcv_selected);
 
         _colourPicker.setColourSelectedListener(new ColourClickedListener() {
             @Override
             public void OnColourClicked(int colour) {
-                animChangeColour(colour);
+                _selectedColour.setColour(colour);
             }
         });
-    }
-
-    private void animChangeColour(int colour){
-        ValueAnimator anim = new ValueAnimator();
-        anim.setIntValues(_selectedColour.getCardBackgroundColor().getDefaultColor(), colour);
-        anim.setEvaluator(new ArgbEvaluator());
-        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                _selectedColour.setCardBackgroundColor((Integer)valueAnimator.getAnimatedValue());
-            }
-        });
-
-        anim.setDuration(getResources().getInteger(android.R.integer.config_mediumAnimTime));
-        anim.start();
     }
 }

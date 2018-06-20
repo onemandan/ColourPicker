@@ -1,6 +1,8 @@
 package uk.co.onemandan.colourpicker;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,15 +26,20 @@ public class GridViewAdapter extends BaseAdapter {
     private List<Integer> _selected;
 
     private int _maxSelected;
+    private int _selectorColour;
+
+    private boolean _canDeselectLast;
 
     private ColourClickedListener _listener;
 
-    GridViewAdapter(Context context, List<Integer> colours, int maxSelected, boolean isSelected,
-                    ColourClickedListener listener) {
-        _context        = context;
-        _colours        = colours;
-        _maxSelected    = maxSelected;
-        _listener       = listener;
+    GridViewAdapter(Context context, List<Integer> colours, int maxSelected, int selectorColour,
+                    boolean isSelected, boolean canDeselectLast, ColourClickedListener listener) {
+        _context         = context;
+        _colours         = colours;
+        _maxSelected     = maxSelected;
+        _selectorColour  = selectorColour;
+        _canDeselectLast = canDeselectLast;
+        _listener        = listener;
 
         _selected       = new ArrayList<>();
         if(isSelected)  _selected.add(0);
@@ -76,12 +83,16 @@ public class GridViewAdapter extends BaseAdapter {
             viewHolder.SelectorView.setVisibility(View.INVISIBLE);
         }
 
+        viewHolder.SelectorView.setColorFilter(new PorterDuffColorFilter(_selectorColour,
+                PorterDuff.Mode.SRC_IN));
         viewHolder.ColourView.setCardBackgroundColor(_colours.get(position));
         viewHolder.ColourView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(_selected.contains(position)){
-                    _selected.remove(_selected.indexOf(position));
+                    if(_selected.size() >= 1 && _canDeselectLast){
+                        _selected.remove(_selected.indexOf(position));
+                    }
                 } else {
                     _selected.add(position);
 

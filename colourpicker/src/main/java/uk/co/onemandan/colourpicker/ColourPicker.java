@@ -16,7 +16,6 @@ public class ColourPicker extends LinearLayout{
     private List<Integer> _colours = new ArrayList<>();
 
     private GridView _gridView;
-    private int _maxSelected;
 
     private ColourClickedListener _listener;
 
@@ -42,14 +41,17 @@ public class ColourPicker extends LinearLayout{
             for (int i : values) { _colours.add(i); }
         }
 
-        setMaxSelected(ta.getInt(R.styleable.ColourPicker_cp_maxSelected, 1));
-        boolean isSelected = ta.getBoolean(R.styleable.ColourPicker_cp_isSelected, true);
+        boolean isSelected      = ta.getBoolean(R.styleable.ColourPicker_cp_isSelected, true);
+        boolean canDeselectLast = ta.getBoolean(R.styleable.ColourPicker_cp_canDeselectLast, false);
+        int maxSelected         = ta.getInteger(R.styleable.ColourPicker_cp_maxSelected, 1);
+        int colour              = ta.getColor(R.styleable.ColourPicker_cp_selectorColour,
+                getResources().getColor(R.color.TintWhite80));
 
         _gridView.setNumColumns(ta.getInt(R.styleable.ColourPicker_cp_coloursPerRow, 5));
 
         ta.recycle();
 
-        _gridView.setAdapter(new GridViewAdapter(context, _colours, _maxSelected, isSelected,
+        _gridView.setAdapter(new GridViewAdapter(context, _colours, maxSelected, colour, isSelected, canDeselectLast,
                 new ColourClickedListener() {
                     @Override
                     public void OnColourClicked(int colour) {
@@ -64,9 +66,6 @@ public class ColourPicker extends LinearLayout{
     }
 
     @SuppressWarnings("unused")
-    public int getMaxSelected(){ return _maxSelected; }
-
-    @SuppressWarnings("unused")
     public List<Integer> getSelectedColours(){
         return ((GridViewAdapter) _gridView.getAdapter()).getSelectedColours();
     }
@@ -79,10 +78,5 @@ public class ColourPicker extends LinearLayout{
     @SuppressWarnings("unused")
     public void setColourSelectedListener(ColourClickedListener listener){
         _listener = listener;
-    }
-
-    @SuppressWarnings("unused")
-    public void setMaxSelected(int maxSelected){
-        _maxSelected = maxSelected;
     }
 }

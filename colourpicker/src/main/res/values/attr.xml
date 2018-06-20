@@ -3,14 +3,21 @@
 
     <declare-styleable name="ColourPicker">
         <attr name="cp_colours"         format="reference" />
-        <attr name="cp_coloursPerRow"   format="integer"/>
+        <attr name="cp_coloursPerRow"   format="integer" />
         <attr name="cp_maxSelected"     format="integer" />
-        <attr name="cp_isSelected"      format="integer" />
+        <attr name="cp_isSelected"      format="boolean" />
+        <attr name="cp_canDeselectLast" format="boolean" />
+        <attr name="cp_selectorColour"  format="color|reference" />
         <!--
         <attr name="cp_colourSize" format="dimension|enum">
             <enum name="auto_fit" value="1" />
         </attr>
         -->
+    </declare-styleable>
+
+    <declare-styleable name="MaterialColourView">
+        <attr name="mcv_labelText" format="string" />
+        <attr name="mcv_initialColour" format="color|reference" />
     </declare-styleable>
 
 </resources>
