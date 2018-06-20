@@ -30,7 +30,7 @@ public class Sample extends AppCompatActivity {
         _colourPicker.setColourSelectedListener(new ColourClickedListener() {
             @Override
             public void OnColourClicked(int colour) {
-                _selectedColour.setColour(colour);
+                _selectedColour.setColour(colour, true);
             }
         });
     }

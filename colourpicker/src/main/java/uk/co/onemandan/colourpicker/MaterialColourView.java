@@ -42,7 +42,7 @@ public class MaterialColourView extends LinearLayout{
                 ta.getString(R.styleable.MaterialColourView_mcv_labelText));
 
         setColour(ta.getColor(R.styleable.MaterialColourView_mcv_initialColour,
-                getResources().getColor(android.R.color.transparent)));
+                getResources().getColor(android.R.color.transparent)), false);
 
         ta.recycle();
     }
@@ -53,21 +53,25 @@ public class MaterialColourView extends LinearLayout{
         _labelView.setText(text);
     }
 
-    public void setColour(int colour){
+    public void setColour(int colour, boolean animate){
         _colourViewColour = colour;
 
-        ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(),
-                _colourView.getCardBackgroundColor().getDefaultColor(), colour);
-        colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        if(animate){
+            ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(),
+                    _colourView.getCardBackgroundColor().getDefaultColor(), colour);
+            colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 
-            @Override
-            public void onAnimationUpdate(ValueAnimator animator) {
-                _colourView.setCardBackgroundColor((int) animator.getAnimatedValue());
-            }
+                @Override
+                public void onAnimationUpdate(ValueAnimator animator) {
+                    _colourView.setCardBackgroundColor((int) animator.getAnimatedValue());
+                }
 
-        });
-        colorAnimation.setDuration(getResources().getInteger(android.R.integer.config_mediumAnimTime));
-        colorAnimation.start();
+            });
+            colorAnimation.setDuration(getResources().getInteger(android.R.integer.config_mediumAnimTime));
+            colorAnimation.start();
+        } else {
+            _colourView.setCardBackgroundColor(_colourViewColour);
+        }
     }
 
     @SuppressWarnings("unused")
