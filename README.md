@@ -51,6 +51,10 @@ dependencies {
 ```
 ## Updates
 
+#### 0.0.3
+- Modified initial colour to not animate.
+- Added animate flag to setColour.
+
 #### 0.0.2
 - Added MaterialColourView.  
 - Added cp_canDeselectLast.  Determines whether or not atleast one colour has to be selected.
