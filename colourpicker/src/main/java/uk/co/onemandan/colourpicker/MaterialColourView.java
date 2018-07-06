@@ -3,10 +3,12 @@ package uk.co.onemandan.colourpicker;
 import android.animation.ArgbEvaluator;
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,6 +23,8 @@ public class MaterialColourView extends LinearLayout implements View.OnClickList
 
     private OnClickListener _listener;
 
+    private TextView _contentView;
+
     public MaterialColourView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
@@ -32,6 +36,7 @@ public class MaterialColourView extends LinearLayout implements View.OnClickList
 
         _labelView  = root.findViewById(R.id.tv_label);
         _colourView = root.findViewById(R.id.cv_colour);
+        _contentView = root.findViewById(R.id.tv_inner);
 
         rootView.setOnClickListener(this);
 
@@ -47,6 +52,9 @@ public class MaterialColourView extends LinearLayout implements View.OnClickList
 
         setColour(ta.getColor(R.styleable.MaterialColourView_mcv_initialColour,
                 getResources().getColor(android.R.color.transparent)), false);
+
+        setUseDenseSpacing(ta.getBoolean(R.styleable.MaterialColourView_mcv_useDenseSpacing,
+                false));
 
         ta.recycle();
     }
@@ -75,6 +83,22 @@ public class MaterialColourView extends LinearLayout implements View.OnClickList
             colorAnimation.start();
         } else {
             _colourView.setCardBackgroundColor(_colourViewColour);
+        }
+    }
+
+    public void setUseDenseSpacing(boolean useDenseSpacing){
+        if(useDenseSpacing){
+            LayoutParams contentLayoutParams    = (LayoutParams) _colourView.getLayoutParams();
+            Resources resources                 = getContext().getResources();
+
+            contentLayoutParams.topMargin = resources.getDimensionPixelOffset(
+                    R.dimen.margin_dense);
+
+            _colourView.setLayoutParams(contentLayoutParams);
+
+            _contentView.setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(
+                    R.dimen.text_size_content_dense
+            ));
         }
     }
 

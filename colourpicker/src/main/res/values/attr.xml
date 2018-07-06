@@ -18,6 +18,7 @@
     <declare-styleable name="MaterialColourView">
         <attr name="mcv_labelText" format="string" />
         <attr name="mcv_initialColour" format="color|reference" />
+        <attr name="mcv_useDenseSpacing" format="boolean" />
     </declare-styleable>
 
 </resources>
