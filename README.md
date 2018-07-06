@@ -54,6 +54,7 @@ dependencies {
 #### 0.0.3
 - Modified initial colour to not animate.
 - Added animate flag to setColour.
+- Added click listener.
 
 #### 0.0.2
 - Added MaterialColourView.  
